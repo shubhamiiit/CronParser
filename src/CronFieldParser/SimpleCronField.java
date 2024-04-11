@@ -1,14 +1,17 @@
+package CronFieldParser;
+
 import java.util.*;
 
-public class SimpleCronField implements CronField {
+public class SimpleCronField implements TimeField {
     private final String inputString;
-    private final CronFieldType type;
+    private final Integer min;
+    private final Integer max;
     private final List<Integer> cronFieldValues = new ArrayList<>();
 
-    public SimpleCronField(String inputString, CronFieldType type) {
+    public SimpleCronField(String inputString, Integer min, Integer max) {
         this.inputString = inputString;
-        this.type = type;
-
+        this.min = min;
+        this.max = max;
         parseInputString();
     }
 
@@ -28,15 +31,14 @@ public class SimpleCronField implements CronField {
     private void parseIntervalValues() {
         String[] intervals = inputString.split("/");
         var startValue = parseValue(intervals[0]);
-        var endValue = type.max;
         var intervalValue = parseValue(intervals[1]);
-        populateValues(startValue, endValue, intervalValue);
+        populateValues(startValue, this.max, intervalValue);
     }
 
     private void parseAsteriskInterval() {
         String[] intervals = inputString.split("/");
         int interval = intervals.length == 2 ? parseValue(intervals[1]) : 1;
-        populateValues(type.min, type.max, interval);
+        populateValues(this.min, this.max, interval);
     }
 
     private void parseRangeOfValues() {
@@ -52,7 +54,7 @@ public class SimpleCronField implements CronField {
     }
 
     private void populateValues(Integer start, Integer end, Integer interval) {
-        if (interval == 0 || end < start || start < type.min || end > type.max) {
+        if (interval == 0 || end < start || start < this.min || end > this.max) {
             throw new IllegalArgumentException("Invalid Cron Expression");
         }
         for (int i = start; i <= end; i += interval) {

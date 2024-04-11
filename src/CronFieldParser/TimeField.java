@@ -1,5 +1,7 @@
+package CronFieldParser;
+
 import java.util.List;
 
-public interface CronField {
+public interface TimeField {
     List<Integer> getFieldValues();
 }
