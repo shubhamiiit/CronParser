@@ -1,6 +1,8 @@
-import CronFieldParser.ComplexCronField;
-import CronFieldParser.CronFieldType;
-import CronFieldParser.TimeField;
+package assignment;
+
+import assignment.CronFieldParser.ComplexCronField;
+import assignment.CronFieldParser.CronFieldType;
+import assignment.CronFieldParser.TimeField;
 
 import java.util.ArrayList;
 import java.util.List;

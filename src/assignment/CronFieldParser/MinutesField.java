@@ -1,4 +1,4 @@
-package CronFieldParser;
+package assignment.CronFieldParser;
 
 public class MinutesField extends SimpleCronField {
     private static final Integer minValue = 0;

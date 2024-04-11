@@ -1,5 +1,7 @@
-import CronFieldParser.CronFieldType;
-import CronFieldParser.TimeField;
+package assignment;
+
+import assignment.CronFieldParser.CronFieldType;
+import assignment.CronFieldParser.TimeField;
 
 import java.util.List;
 
@@ -15,7 +17,7 @@ public class PrintCronFields {
         this.cronFieldTypes = cronFieldTypes;
     }
 
-    public static String printFieldAsString(CronFieldType fieldType) {
+    private static String printFieldAsString(CronFieldType fieldType) {
         return switch (fieldType) {
             case MINUTES -> "minute";
             case HOURS -> "hour";
@@ -31,7 +33,7 @@ public class PrintCronFields {
             var output = printFieldAsString(cronFieldTypes.get(i));
             printField(output, timeFields.get(i));
         }
-        System.out.println("command " + commandField);
+        System.out.printf("%-14s %s", "command" , commandField);
     }
 
     public void printField(String field, TimeField cronField) {

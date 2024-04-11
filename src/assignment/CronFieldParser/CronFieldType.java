@@ -1,4 +1,4 @@
-package CronFieldParser;
+package assignment.CronFieldParser;
 
 public enum CronFieldType {
     MINUTES,

@@ -1,10 +1,10 @@
-package CronFieldParser;
+package assignment.CronFieldParser;
 
-public class DayOfWeekField extends SimpleCronField {
+public class HoursField extends SimpleCronField {
     private static final Integer minValue = 0;
     private static final Integer maxValue = 23;
 
-    public DayOfWeekField(String inputString) {
+    public HoursField(String inputString) {
         super(inputString, minValue, maxValue);
     }
 }

@@ -1,4 +1,4 @@
-package CronFieldParser;
+package assignment.CronFieldParser;
 
 public class TimeFieldFactory {
     public static TimeField createTimeField( String inputString, CronFieldType fieldType) {
