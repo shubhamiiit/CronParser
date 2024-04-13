@@ -63,7 +63,14 @@ public class SimpleCronField implements TimeField {
     }
 
     Integer parseValue(String value){
-        return Integer.parseInt(value);
+        try{
+            return Integer.parseInt(value);
+        }
+        catch(NumberFormatException e) {
+            System.out.println("Invalid cron string: Non-numeric value");
+            System.exit(1);
+        }
+        return 0;
     }
     
     @Override

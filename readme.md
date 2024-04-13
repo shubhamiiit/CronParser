@@ -87,11 +87,14 @@ day of week    1 2 3 4 5
 command        /usr/bin/find
 ```
 
-## Scope
+## Feature Supported
 
-This program is designed to parse both complex and simple strings. For example, it can handle complex strings like "0-5,1/2" as well as simpler ones like "1-2" or "0/4" or "1".
+#### Step Function Supported
+- Allows a jump of fixed step value.
+- Allows wild card value (*) for a unit field within its ranges.
+- Handles Complex Strings of type: "hyphen(-), step(/)".
 
-#### Ranges : [Min, Max]
+#### Ranges Supported : [Min, Max]
 - Minutes: [0, 59]
 - Hour: [0, 23]
 - Day Of Month: [1,31]

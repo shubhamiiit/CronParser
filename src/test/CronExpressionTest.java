@@ -64,4 +64,10 @@ public class CronExpressionTest {
         complexCronField = new ComplexCronField("4,15,19,23", CronFieldType.HOURS);
         assertEquals(Arrays.asList(4,15,19,23), complexCronField.getFieldValues());
     }
+
+    @Test
+    public void testAsteriskValue() {
+        ComplexCronField complexCronField = new ComplexCronField("*", CronFieldType.DAY_OF_WEEK);
+        assertEquals(Arrays.asList(1,2,3,4,5,6,7), complexCronField.getFieldValues());
+    }
 }
