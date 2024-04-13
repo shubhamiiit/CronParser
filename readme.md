@@ -87,6 +87,17 @@ day of week    1 2 3 4 5
 command        /usr/bin/find
 ```
 
+## Scope
+
+This program is designed to parse both complex and simple strings. For example, it can handle complex strings like "0-5,1/2" as well as simpler ones like "1-2" or "0/4" or "1".
+
+#### Ranges : [Min, Max]
+- Minutes: [0, 59]
+- Hour: [0, 23]
+- Day Of Month: [1,31]
+- Month: [1,12]
+- Day of Week: [1,7]
+
 ## Contributors:
 Shubham Rawat
 

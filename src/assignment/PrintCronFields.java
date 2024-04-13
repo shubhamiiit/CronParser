@@ -33,7 +33,7 @@ public class PrintCronFields {
             var output = printFieldAsString(cronFieldTypes.get(i));
             printField(output, timeFields.get(i));
         }
-        System.out.printf("%-14s %s", "command" , commandField);
+        System.out.printf("%-14s %s\n", "command" , commandField);
     }
 
     public void printField(String field, TimeField cronField) {
