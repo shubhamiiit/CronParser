@@ -18,14 +18,20 @@ public class PrintCronFields {
     }
 
     private static String printFieldAsString(CronFieldType fieldType) {
-        return switch (fieldType) {
-            case MINUTES -> "minute";
-            case HOURS -> "hour";
-            case DAY_OF_MONTH -> "day of month";
-            case MONTH -> "month";
-            case DAY_OF_WEEK -> "day of week";
-            default -> throw new IllegalArgumentException("Invalid field type: " + fieldType);
-        };
+        switch (fieldType) {
+            case MINUTES:
+                return "minute";
+            case HOURS:
+                return "hour";
+            case DAY_OF_MONTH:
+                return "day of month";
+            case MONTH:
+                return "month";
+            case DAY_OF_WEEK:
+                return "day of week";
+            default:
+                throw new IllegalArgumentException("Invalid field type: " + fieldType);
+        }
     }
 
     public void print() {
